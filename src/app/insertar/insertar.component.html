@@ -1,0 +1,45 @@
+<div class="container">
+    <h2>Insertar Nueva Pregunta</h2>
+    <form (ngSubmit)="insertarPregunta()">
+      <div class="form-group">
+        <label for="pregunta">Pregunta:</label>
+        <input
+          type="text"
+          id="pregunta"
+          [(ngModel)]="nuevaPregunta.pregunta"
+          name="pregunta"
+          required
+          class="form-control"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="respuesta">Respuesta:</label>
+        <input
+          type="text"
+          id="respuesta"
+          [(ngModel)]="nuevaPregunta.respuesta"
+          name="respuesta"
+          required
+          class="form-control"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="estado">Estado:</label>
+        <input
+          type="text"
+          id="estado"
+          [(ngModel)]="nuevaPregunta.estado"
+          name="estado"
+          required
+          class="form-control"
+        />
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Insertar</button>
+      
+      <button type="button" (click)="home()" class="btn btn-secondary">Cancelar</button>
+    </form>
+  </div>
+  

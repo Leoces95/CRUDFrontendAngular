@@ -1,0 +1,27 @@
+<div *ngIf="preguntas$ | async as preguntas; else loading">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Pregunta</th>
+        <th>Respuesta</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pregunta of preguntas">
+        <td>{{ pregunta.id }}</td>
+        <td>{{ pregunta.pregunta }}</td>
+        <td>{{ pregunta.respuesta }}</td>
+        <td>{{ pregunta.estado }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #loading>
+  <p>Cargando preguntas...</p>
+</ng-template>
+
+<!-- Botón para volver a la página de inicio -->
+<button (click)="home()">Volver a Inicio</button>
